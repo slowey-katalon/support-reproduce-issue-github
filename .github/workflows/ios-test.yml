@@ -158,11 +158,6 @@ jobs:
           # Allow time for simulator to be fully ready
           sleep 10
 
-      - name: Pre-warm iOS Simulator
-        run: |
-          appium driver run xcuitest preboot --deviceName "CI-iPhone 14" --platformVersion ${{ env.IOS_VERSION }} --udid ${{ env.DEVICE_UDID }}
-          sleep 10
-
       - name: Download and Run KRE 10.1.0
         run: |
           # Create directory for KRE
