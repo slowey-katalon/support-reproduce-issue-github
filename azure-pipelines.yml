@@ -1,0 +1,211 @@
+trigger:
+  branches:
+    include:
+      - main
+stages:
+  - stage: __default
+    jobs:
+      - job: Job
+        pool:
+          vmImage: macos-14
+        steps:
+          - task: CmdLine@2
+            displayName: "Detect CPU Architecture"
+            inputs:
+              script: |
+                # Detect CPU architecture
+                ARCH=$(uname -m)
+                echo "Detected CPU architecture: $ARCH"
+
+                if [ "$ARCH" = "arm64" ]; then
+                  echo "This is an ARM64 (Apple Silicon) machine"
+                  echo "##vso[task.setvariable variable=CPU_ARCH]arm64"
+                  echo "##vso[task.setvariable variable=IS_ARM64]true"
+                elif [ "$ARCH" = "x86_64" ]; then
+                  # Check if running under Rosetta
+                  if sysctl -n sysctl.proc_translated 2>/dev/null | grep -q '1'; then
+                    echo "This is an Intel/x86_64 architecture running under Rosetta 2 translation"
+                    echo "##vso[task.setvariable variable=CPU_ARCH]x86_64-rosetta"
+                    echo "##vso[task.setvariable variable=IS_ARM64]true"
+                  else
+                    echo "This is a native Intel/x86_64 machine"
+                    echo "##vso[task.setvariable variable=CPU_ARCH]x86_64"
+                    echo "##vso[task.setvariable variable=IS_ARM64]false"
+                  fi
+                else
+                  echo "Unknown architecture: $ARCH"
+                  echo "##vso[task.setvariable variable=CPU_ARCH]$ARCH"
+                  echo "##vso[task.setvariable variable=IS_ARM64]false"
+                fi
+
+                # Additional system information
+                system_profiler SPHardwareDataType | grep "Chip\\|Processor"
+          - task: CmdLine@2
+            displayName: "Install iOS dependencies and Appium"
+            inputs:
+              script: |
+                brew update
+                brew install carthage ios-deploy libimobiledevice ideviceinstaller
+                brew install ios-webkit-debug-proxy
+                npm i --location=global appium
+                npm install -g appium-doctor
+                appium driver install xcuitest@7.35.0
+          - task: CmdLine@2
+            displayName: "Set up Xcode"
+            inputs:
+              script: |
+                sudo xcode-select --switch /Applications/Xcode_16.1.app/Contents/Developer || sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+                sudo xcodebuild -license accept
+                xcodebuild -version
+
+                # Verify iOS SDK version is accessible
+                echo "Checking iOS SDK version..."
+                export SDK_VERSION=$(xcrun --sdk iphonesimulator --show-sdk-version)
+                echo "iOS SDK Version: $SDK_VERSION"
+                echo "##vso[task.setvariable variable=IOS_SDK_VERSION]$SDK_VERSION"
+          - task: CmdLine@2
+            displayName: "List available iOS simulators"
+            inputs:
+              script: |
+                xcrun simctl list devices
+                xcrun simctl list runtimes
+          - task: CmdLine@2
+            displayName: "Select and Ensure an iOS Simulator is Running"
+            inputs:
+              script: |
+                # Specify iOS version and device
+                IOS_VERSION="17.0"
+                DEVICE_NAME="iPhone 14"
+
+                # List available runtimes to check correct format
+                echo "Available iOS runtimes:"
+                xcrun simctl list runtimes | grep iOS
+
+                # Find the exact runtime name that matches our version
+                RUNTIME=$(xcrun simctl list runtimes | grep iOS | grep "$IOS_VERSION" | awk '{print $NF}')
+
+                if [ -z "$RUNTIME" ]; then
+                  echo "Error: No iOS $IOS_VERSION runtime found. See available runtimes above."
+                  exit 1
+                fi
+
+                # Display Xcode and iOS configuration information
+                echo "Xcode path: $(xcode-select -p)"
+                echo "Using runtime: $RUNTIME"
+
+                # Kill any existing simulator processes
+                killall "Simulator" 2>/dev/null || true
+                xcrun simctl shutdown all 2>/dev/null || true
+
+                # Create a new simulator
+                echo "Creating simulator with iOS $IOS_VERSION using runtime $RUNTIME"
+                DEVICE_UDID=$(xcrun simctl create "CI-$DEVICE_NAME" "iPhone 14" "$RUNTIME")
+
+                # Check if simulator was created successfully
+                if [ -z "$DEVICE_UDID" ] || [[ "$DEVICE_UDID" == *"Invalid"* ]]; then
+                  echo "Error creating simulator. Listing available device types:"
+                  xcrun simctl list devicetypes | grep iPhone
+                  exit 1
+                fi
+
+                echo "Created simulator with UDID: $DEVICE_UDID"
+
+                # Boot the simulator with increased timeout
+                echo "Booting simulator..."
+                xcrun simctl boot "$DEVICE_UDID" || echo "Boot command failed, checking if simulator is already running"
+
+                # Wait for simulator to be fully booted
+                echo "Waiting for simulator to be ready..."
+                RETRY=0
+                MAX_RETRY=30
+                while [ $RETRY -lt $MAX_RETRY ]; do
+                  STATUS=$(xcrun simctl list | grep "$DEVICE_UDID" | grep "Booted")
+                  if [ ! -z "$STATUS" ]; then
+                    echo "Simulator is booted"
+                    # Additional wait to ensure services are started
+                    sleep 15
+                    break
+                  fi
+                  echo "Waiting for simulator to boot... ($RETRY/$MAX_RETRY)"
+                  sleep 10
+                  RETRY=$((RETRY+1))
+                done
+
+                if [ $RETRY -eq $MAX_RETRY ]; then
+                  echo "Failed to boot simulator after maximum retries"
+                  xcrun simctl list devices
+                  exit 1
+                fi
+                          
+                # Set the variable for later steps
+                echo "##vso[task.setvariable variable=DEVICE_UDID]$DEVICE_UDID"
+                echo "##vso[task.setvariable variable=IOS_VERSION]$IOS_VERSION"
+          - task: CmdLine@2
+            displayName: "Pre-warm simulator"
+            inputs:
+              script: |
+                # Check the simulator is ready
+                echo "Verifying simulator $(DEVICE_UDID) is running..."
+                xcrun simctl list devices | grep "$(DEVICE_UDID)"
+
+                # Launch Safari to warm up the device
+                echo "Launching Safari to warm up the simulator..."
+                xcrun simctl launch "$(DEVICE_UDID)" com.apple.mobilesafari
+
+                # Verify iOS SDK version again to ensure it's accessible to Appium
+                SDK_VERSION=$(xcrun --sdk iphonesimulator --show-sdk-version)
+                echo "iOS SDK Version: $SDK_VERSION"
+
+                # Allow time for simulator to be fully ready
+                sleep 10
+          - task: CmdLine@2
+            displayName: "Pre-warm iOS Simulator"
+            inputs:
+              script: |
+                appium driver run xcuitest preboot --deviceName "CI-iPhone 14" --platformVersion $(IOS_VERSION) --udid $(DEVICE_UDID)
+                sleep 10
+          - task: CmdLine@2
+            displayName: "Download and Run KRE 10.1.0"
+            inputs:
+              script: |
+                # Create directory for KRE
+                mkdir -p katalon_runtime
+                cd katalon_runtime
+
+                # Download KRE 10.1.0
+                echo "Downloading Katalon Runtime Engine 10.1.0..."
+                curl -L -o katalon.tar.gz "https://download.katalon.com/10.1.0/Katalon_Studio_Engine_MacOS-10.1.0.tar.gz" || {
+                  echo "Error: Download failed"
+                  exit 1
+                }
+                          
+                # Extract KRE
+                echo "Extracting Katalon Runtime Engine..."
+                tar -xzf katalon.tar.gz || {
+                  echo "Error: Failed to extract katalon.tar.gz"
+                  exit 1
+                }
+
+                # Find the KRE executable
+                KRE_DIR=$(find . -name "Katalon Studio Engine.app" -type d | head -1)
+                if [ -z "$KRE_DIR" ]; then
+                  echo "Error: Could not find Katalon Studio Engine.app directory"
+                  ls -la
+                  exit 1
+                fi
+
+                # Make the KRE executable
+                KATALONC_PATH="$KRE_DIR/Contents/MacOS/katalonc"
+                echo "KRE executable path: $KATALONC_PATH"
+                chmod +x "$KATALONC_PATH"
+
+                # Run the Katalon tests with KRE
+                echo "Running Katalon tests with KRE..."
+                "$KATALONC_PATH" -projectPath="/Users/runner/work/1/s/support-reproduce-issue.prj" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/mobileTS" -browserType="iOS" -deviceId="$DEVICE_UDID" -executionProfile="default" -apiKey="d1e929ac-be0f-4cec-a5fc-f9fd6d7c8485"
+
+                # Check the exit code
+                EXIT_CODE=$?
+                if [ $EXIT_CODE -ne 0 ]; then
+                  echo "Katalon execution failed with exit code: $EXIT_CODE"
+                  exit $EXIT_CODE
+                fi

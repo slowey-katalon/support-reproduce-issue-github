@@ -1,0 +1,1 @@
+[38;5;112m[Appium][0m Could not load driver 'flutter', so it will not be available. Error in loading the driver was: Could not find a driver installed at /Users/bhavyansh-katalon/.appium/node_modules/appium-flutter-driver

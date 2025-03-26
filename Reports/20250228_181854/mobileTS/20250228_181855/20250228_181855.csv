@@ -1,0 +1,9 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+mobileTS,,,,28-02-2025 18:19:00,28-02-2025 18:20:30,1m - 30.299s,PASSED
+,,,,,,,
+Test Cases/mobileTC,,,,28-02-2025 18:19:00,28-02-2025 18:20:30,1m - 30.236s,PASSED
+Start listener action : sampleBeforeTestCase,,,,28-02-2025 18:19:00,28-02-2025 18:19:00,0.006s,PASSED
+Start listener action : sampleBeforeTestCase,,,,28-02-2025 18:19:00,28-02-2025 18:19:00,0.000s,PASSED
+"startApplication(""/Users/bhavyansh-katalon/Downloads/iOS.Simulator.SauceLabs.Mobile.Sample.app.2.7.1.app"", true)",,,,28-02-2025 18:19:00,28-02-2025 18:20:15,1m - 15.101s,PASSED
+"setText(findTestObject(""Object Repository/XCUIElementTypeTextField - test-Username""), ""user01"", 0)",,,,28-02-2025 18:20:15,28-02-2025 18:20:19,3.731s,PASSED
+closeApplication(),,,,28-02-2025 18:20:19,28-02-2025 18:20:30,11.362s,PASSED

@@ -1,0 +1,12 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+BhavyanshADOts,Safari 16.0,,,27-02-2025 23:33:38,27-02-2025 23:43:29,9m - 50.715s,PASSED
+,,,,,,,
+Test Cases/dynamicTCTest,Safari 16.0,,dynamicTC,27-02-2025 23:39:22,27-02-2025 23:43:29,4m - 6.910s,PASSED
+Start listener action : sampleBeforeTestCase,Safari 16.0,,,27-02-2025 23:39:22,27-02-2025 23:39:22,0.001s,PASSED
+"openBrowser("""")",Safari 16.0,,,27-02-2025 23:39:22,27-02-2025 23:42:08,2m - 45.588s,PASSED
+"navigateToUrl(""https://katalon-demo-cura.herokuapp.com/"")",Safari 16.0,,,27-02-2025 23:42:08,27-02-2025 23:42:14,6.287s,PASSED
+"takeScreenshotAsCheckpoint(""Home Page"")",Safari 16.0,,,27-02-2025 23:42:14,27-02-2025 23:42:27,13.187s,PASSED
+"click(findTestObject(""Object Repository/Page_CURA Healthcare Service/a_Make Appointment""))",Safari 16.0,,,27-02-2025 23:42:27,27-02-2025 23:43:06,38.970s,PASSED
+"setText(findTestObject(""Object Repository/Page_CURA Healthcare Service/input_Username_username""), ""John Doe"")",Safari 16.0,,,27-02-2025 23:43:06,27-02-2025 23:43:16,9.513s,PASSED
+"takeScreenshotAsCheckpoint(""Login Page"")",Safari 16.0,,,27-02-2025 23:43:16,27-02-2025 23:43:22,6.755s,PASSED
+closeBrowser(),Safari 16.0,,,27-02-2025 23:43:22,27-02-2025 23:43:29,6.599s,PASSED

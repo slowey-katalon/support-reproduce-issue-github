@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>dynamicTCTest</name>
+   <tag>dynamicTC</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>c22ee3e1-f5e3-4804-9b16-c8718942e899</testCaseGuid>
+</TestCaseEntity>

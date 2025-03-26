@@ -1,0 +1,130 @@
+accessibilityJob: false
+alwaysRunPostSteps: false
+appium: false
+autosplit: true
+betaFeature:
+    setPartiallyCompletedAsCompleted: false
+captureScreenRecordingForScenarios: false
+codeDirectory: support-reproduce-issue
+collectLocalGitData: true
+combineTasksInMatrixMode: false
+concurrency: 1
+cypress: false
+differentialUpload:
+    enabled: false
+    forcedDisabled: false
+    ttlHours: null
+dynamicAllocation: false
+errorCategorizedOnFailureOnly: false
+framework:
+    additional_args: null
+    args:
+        appId: ""
+        appPath: ""
+        artifacts: false
+        avoidAppLaunch: false
+        deviceSelectionStrategy: ""
+        devices: []
+        disableReleaseDevice: false
+        filters:
+            attributes: []
+        fixedIP: ""
+        isRealMobile: null
+        isVirtualDevice: false
+        language: ""
+        locale: ""
+        minorOsVersion: false
+        mitmProxy: false
+        mobileDC: null
+        networkHar: false
+        platformName: ""
+        playwrightRD: false
+        preservedDevice: false
+        queueTimeout: 0
+        resignApp: true
+        shards:
+            mappings: []
+        skipInstall: false
+        skipUninstallPreviousBuild: false
+        skipXMLOnRun: false
+        testSuiteAppId: ""
+        testSuitePath: ""
+        uninstallPreviousBuild: false
+        xcTestPlanId: ""
+        xcTestPlanPath: ""
+    baseCommand: ""
+    defaultReports: false
+    discoveryFlags: []
+    discoveryMode: ""
+    discoveryType: ""
+    downloadURL: ""
+    flags: []
+    isTestNGXMLSuite: false
+    licenseKey: ""
+    name: ""
+    runnerFlags: []
+    toscaArgs: null
+    userdefinediscovery: false
+    version: ""
+    workingDirectory: ""
+globalTimeout: 90
+jobID: 57276aa4-043f-410f-97d7-09d429342797
+jobLabel:
+    - Katalon
+key: onCs1iW6TYpyGnnqIkwR4Nb37If9MDAo0U0xTnWbJSpy0zrSQk
+localHTTPProxy: ""
+maxRetries: 1
+maxRetriesPreSteps: 0
+mergeArtifacts: true
+meta: {}
+partialReports:
+    type: json
+    location: Extent
+    frameworkName: extent-native
+    email:
+        to: []
+        metaInfo: []
+        linkValidity: 0
+    configPath: ""
+    configPathURL: ""
+platformConfig: null
+postDirectives:
+    commands: []
+    shell: ""
+    workingDirectory: ""
+preDirectives:
+    commands: []
+    maxRetries: 0
+    shell: ""
+    workingDirectory: ""
+project:
+    id: ""
+    name: ""
+    type: default
+regionConfig: []
+report: true
+runson: mac13
+runtime:
+    addons: []
+    language: katalon
+    opts: {}
+    version: 9.7.3
+slackChannel: ""
+sourcePayload:
+    verifySSL: true
+storageType: ""
+testDiscovery:
+    autosubset: true
+    command: grep -lr 'testSuiteGuid' */*.ts | sed 's/:.*//' | sed 's/.ts//g'
+    mode: dynamic
+    type: raw
+testDiscoveryResultV3: []
+testRunnerCommand: katalonc -noSplash -runMode=console -projectPath="/Users/ltuser/foreman/support-reproduce-issue/support-reproduce-issue.prj" -retry=0 -testSuitePath="Test Suites/BhavyanshADOts" -browserType="lambdatestchrome" -executionProfile="default" -apiKey="d1e929ac-be0f-4cec-a5fc-f9fd6d7c8485" -orgID=1192683 --config -proxy.auth.option=USE_SYSTEM -proxy.system.option=USE_SYSTEM -proxy.system.applyToDesiredCapabilities=true -webui.autoUpdateDrivers=true
+testSuites: []
+triggerMode: false
+tunnelOpts:
+    testsPerTunnel: 10
+unzipPayload: false
+user: bhavyansh.ameta
+version: "0.1"
+waitForArtefactsUpload: false

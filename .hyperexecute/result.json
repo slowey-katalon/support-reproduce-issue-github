@@ -1,0 +1,87 @@
+{
+    "id": "57276aa4-043f-410f-97d7-09d429342797",
+    "created_at": "2024-12-20T14:40:24Z",
+    "update_at": "2024-12-20T14:46:27Z",
+    "global_timeout": 90,
+    "tunnel_name": "",
+    "start_time": "2024-12-20T14:41:05Z",
+    "end_time": "2024-12-20T14:46:27Z",
+    "summary": {
+        "total_time": 322000000000,
+        "execution_time": 322000000000,
+        "total_tasks": 1,
+        "build_time_consumed": 322000000000,
+        "jobTestExecutionTime": "1m16s",
+        "failed_tasks": 1,
+        "total_stage_info": {
+            "scenario": {
+                "StageFailedPercent": 100,
+                "StagePassPercent": 0,
+                "TotalStage": 2
+            },
+            "test_discovery": {
+                "StageFailedPercent": 0,
+                "StagePassPercent": 100,
+                "TotalStage": 1
+            }
+        },
+        "status": "failed",
+        "job_link": "https://hyperexecute.lambdatest.com/hyperexecute/task?jobId=57276aa4-043f-410f-97d7-09d429342797"
+    },
+    "tasks": [
+        {
+            "id": "8ff662bd-36bd-45f4-9a7e-0dac8dc78d17",
+            "os": "mac",
+            "status": "failed",
+            "remark": "error in running test suites - step 1 - exit status 1",
+            "debug": false,
+            "created_at": "2024-12-20T14:41:04Z",
+            "update_at": "2024-12-20T14:46:27Z",
+            "start_time": "2024-12-20T14:41:05Z",
+            "end_time": "2024-12-20T14:46:27Z",
+            "group_number": 1,
+            "stages": [
+                {
+                    "id": "66d43bc5-f575-48e6-a5a0-efdfac7eaef8",
+                    "type": "test_discovery",
+                    "status": "completed",
+                    "name": "discovery",
+                    "iteration": 0,
+                    "link": "discovery.log",
+                    "created_at": "2024-12-20T14:41:10Z",
+                    "started_at": "2024-12-20T14:41:10Z",
+                    "updated_at": "2024-12-20T14:41:10Z",
+                    "order": 2,
+                    "task_number": 1
+                },
+                {
+                    "id": "ae3b36c1-f179-4293-8df8-18c4d550a149",
+                    "type": "scenario",
+                    "status": "failed",
+                    "name": "Test Suites/BhavyanshADOTSdynamic",
+                    "iteration": 0,
+                    "link": "command.1.0.log",
+                    "created_at": "2024-12-20T14:41:10Z",
+                    "started_at": "2024-12-20T14:41:16Z",
+                    "updated_at": "2024-12-20T14:44:08Z",
+                    "order": 3,
+                    "task_number": 1
+                },
+                {
+                    "id": "ff6cc880-3ca0-4e35-87aa-023896af3ee1",
+                    "type": "scenario",
+                    "status": "failed",
+                    "name": "Test Suites/BhavyanshAD",
+                    "iteration": 0,
+                    "link": "command.2.0.log",
+                    "created_at": "2024-12-20T14:41:10Z",
+                    "started_at": "2024-12-20T14:44:08Z",
+                    "updated_at": "2024-12-20T14:46:26Z",
+                    "order": 4,
+                    "task_number": 1
+                }
+            ]
+        }
+    ],
+    "test_ids": null
+}

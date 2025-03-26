@@ -1,0 +1,18 @@
+{
+  "platformName": "iOS",
+  "platformVersion": "17.0",
+  "deviceName": "CI-iPhone 14",
+  "automationName": "XCUITest",
+  "app": "/Users/runner/work/1/s/Include/resources/iOS.Simulator.SauceLabs.Mobile.Sample.app.2.7.1.app",
+  "appium:eventloopIdleDelaySec": 0.0,
+  "appium:shouldWaitForQuiescence": true,
+  "appium:shouldUseTestManagerForVisibilityDetection": false,
+  "appium:maxTypingFrequency": 60,
+  "appium:shouldUseSingletonTestManager": true,
+  "appium:shouldTerminateApp": true,
+  "appium:forceAppLaunch": true,
+  "appium:useNativeCachingStrategy": true,
+  "appium:forceSimulatorSoftwareKeyboardPresence": false,
+  "appium:udid": "$(DEVICE_UDID)",
+  "appium:wdaLocalPort": "51015"
+}

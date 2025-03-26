@@ -1,0 +1,30 @@
+{
+  "keywordFileContentHash": "F2C21AEBE5798A6014470EC59B051F44",
+  "keywordClasses": [
+    {
+      "name": "demo.demoKey",
+      "keywordMethods": [
+        {
+          "name": "sampleBeforeTestCase",
+          "parameters": [
+            {
+              "name": "testCaseContext",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "com.kms.katalon.core.context.TestCaseContext",
+                "unresolvedClassName": "TestCaseContext",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}

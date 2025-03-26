@@ -1,0 +1,83 @@
+[38;5;112m[Appium][0m Welcome to Appium v2.16.2
+[38;5;112m[Appium][0m Non-default server args:
+[38;5;112m[Appium][0m { basePath: [32m'/wd/hub'[39m, loglevel: [32m'info'[39m, port: [33m55200[39m }
+[38;5;112m[Appium][0m Attempting to load driver uiautomator2...
+[38;5;112m[Appium][0m Attempting to load driver xcuitest...
+[38;5;112m[Appium][0m Appium REST http interface listener started on http://0.0.0.0:55200/wd/hub
+[38;5;112m[Appium][0m You can provide the following URLs in your client code to connect to this server:
+	http://127.0.0.1:55200/wd/hub (only accessible from the same host)
+	http://192.168.1.8:55200/wd/hub
+[38;5;112m[Appium][0m Available drivers:
+[38;5;112m[Appium][0m   - uiautomator2@4.0.1 (automationName 'UiAutomator2')
+[38;5;112m[Appium][0m   - xcuitest@7.35.0 (automationName 'XCUITest')
+[38;5;112m[Appium][0m No plugins have been installed. Use the "appium plugin" command to install the one(s) you want to use.
+[38;5;86m[HTTP][0m [37m-->[39m [37mGET[39m [37m/wd/hub/status[39m [90m{}[39m
+[38;5;86m[HTTP][0m [37m<-- GET /wd/hub/status [39m[32m200[39m [90m8 ms - 111[39m [90m[39m
+[38;5;86m[HTTP][0m [37m-->[39m [37mPOST[39m [37m/wd/hub/session[39m [90m{"capabilities":{"firstMatch":[{"appium:app":"/Users/phuc.truong/Documents/Code/support-reproduce-issue/Include/resources/iOS.Simulator.SauceLabs.Mobile.Sample.app.2.7.1.app","appium:automationName":"XCUITest","appium:deviceId":"","appium:deviceName":"iPhone 16 Pro","appium:fullReset":false,"appium:newCommandTimeout":1800,"appium:noReset":true,"appium:platformName":"iOS","appium:platformVersion":"18.2","appium:waitForAppScript":"true;","appium:wdaLocalPort":55158,"platformName":"IOS"}]},"desiredCapabilities":{"appium:app":"/Users/phuc.truong/Documents/Code/support-reproduce-issue/Include/resources/iOS.Simulator.SauceLabs.Mobile.Sample.app.2.7.1.app","appium:automationName":"XCUITest","appium:deviceId":"","appium:deviceName":"iPhone 16 Pro","appium:fullReset":false,"appium:newCommandTimeout":1800,"appium:noReset":true,"appium:platformName":"iOS","appium:platformVersion":"18.2","appium:waitForAppScript":"true;","appium:wdaLocalPort":55158}}[39m
+[38;5;123m[BaseDriver][0m Ignoring capability 'appium:platformName=iOS' and using capability 'platformName=IOS'
+[38;5;123m[BaseDriver][0m The capabilities ["platformName"] are standard capabilities and do not require "appium:" prefix
+[38;5;112m[Appium][0m Attempting to find matching driver for automationName 'XCUITest' and platformName 'IOS'
+[38;5;112m[Appium][0m The 'xcuitest' driver was installed and matched caps.
+[38;5;112m[Appium][0m Will require it at /Users/phuc.truong/.appium/node_modules/appium-xcuitest-driver
+[38;5;187m[AppiumDriver@3754][0m Appium v2.16.2 creating new XCUITestDriver (v7.35.0) session
+[38;5;187m[AppiumDriver@3754][0m Checking BaseDriver versions for Appium and XCUITestDriver
+[38;5;187m[AppiumDriver@3754][0m Appium's BaseDriver version is 9.16.2
+[38;5;187m[AppiumDriver@3754][0m XCUITestDriver's BaseDriver version is 9.16.2
+[38;5;90m[XCUITestDriver@a8b4][0m The following provided capabilities were not recognized by this driver:
+[38;5;90m[XCUITestDriver@a8b4][0m   deviceId
+[38;5;90m[XCUITestDriver@a8b4][0m   waitForAppScript
+[38;5;82m[62e319ca][0m[38;5;90m[XCUITestDriver@a8b4][0m Session created with session id: 62e319ca-5a52-4a6e-975c-0ae5ce97b87f
+[38;5;82m[62e319ca][0m[38;5;90m[XCUITestDriver@a8b4][0m No real device udid has been provided in capabilities. Will select a matching simulator to run the test.
+[38;5;82m[62e319ca][0m[38;5;90m[XCUITestDriver@a8b4][0m iOS SDK Version set to '18.2'
+[38;5;82m[62e319ca][0m[38;5;90m[XCUITestDriver@a8b4][0m Constructing iOS simulator for Xcode version 16.2 with udid '35709DD4-C37D-4E39-8444-81ABF01A04F3'
+[38;5;82m[62e319ca][0m[38;5;90m[XCUITestDriver@a8b4][0m Determining device to run tests on: udid: '35709DD4-C37D-4E39-8444-81ABF01A04F3', real device: false
+[38;5;82m[62e319ca][0m[38;5;123m[BaseDriver][0m Using local app '/Users/phuc.truong/Documents/Code/support-reproduce-issue/Include/resources/iOS.Simulator.SauceLabs.Mobile.Sample.app.2.7.1.app'
+[38;5;82m[62e319ca][0m[38;5;90m[XCUITestDriver@a8b4][0m Using WDA path: '/Users/phuc.truong/.appium/node_modules/appium-xcuitest-driver/node_modules/appium-webdriveragent'
+[38;5;82m[62e319ca][0m[38;5;90m[XCUITestDriver@a8b4][0m Using WDA agent: '/Users/phuc.truong/.appium/node_modules/appium-xcuitest-driver/node_modules/appium-webdriveragent/WebDriverAgent.xcodeproj'
+[38;5;82m[62e319ca][0m[38;5;90m[XCUITestDriver@a8b4][0m Setting up simulator
+[38;5;82m[62e319ca][0m[38;5;90m[XCUITestDriver@a8b4][0m Both Simulator with UDID '35709DD4-C37D-4E39-8444-81ABF01A04F3' and the UI client are currently running
+[38;5;82m[62e319ca][0m[38;5;90m[XCUITestDriver@a8b4][0m App 'com.saucelabs.SwagLabsMobileApp' is already installed
+[38;5;82m[62e319ca][0m[38;5;90m[XCUITestDriver@a8b4][0m noReset is requested. The app will not be be (re)installed
+[38;5;82m[62e319ca][0m[38;5;23m[DevCon Factory][0m Requesting connection for device 35709DD4-C37D-4E39-8444-81ABF01A04F3 on local port 55158
+[38;5;82m[62e319ca][0m[38;5;23m[DevCon Factory][0m Successfully requested the connection for 35709DD4-C37D-4E39-8444-81ABF01A04F3:55158
+[38;5;82m[62e319ca][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:55158
+[38;5;82m[62e319ca][0m[38;5;90m[XCUITestDriver@a8b4][0m Launching WebDriverAgent on the device
+[38;5;82m[62e319ca][0m[38;5;90m[XCUITestDriver@a8b4][0m There is no need to perform the project cleanup. A fresh install has been detected
+[38;5;82m[62e319ca][0m[38;5;90m[XCUITestDriver@a8b4][0m connect ECONNREFUSED 127.0.0.1:55158
+[38;5;82m[62e319ca][0m[38;5;90m[XCUITestDriver@a8b4][0m connect ECONNREFUSED 127.0.0.1:55158
+[38;5;82m[62e319ca][0m[38;5;90m[XCUITestDriver@a8b4][0m connect ECONNREFUSED 127.0.0.1:55158
+[38;5;82m[62e319ca][0m[38;5;90m[XCUITestDriver@a8b4][0m connect ECONNREFUSED 127.0.0.1:55158
+[38;5;82m[62e319ca][0m[38;5;90m[XCUITestDriver@a8b4][0m connect ECONNREFUSED 127.0.0.1:55158
+[38;5;82m[62e319ca][0m[38;5;90m[XCUITestDriver@a8b4][0m connect ECONNREFUSED 127.0.0.1:55158
+[38;5;82m[62e319ca][0m[38;5;90m[XCUITestDriver@a8b4][0m connect ECONNREFUSED 127.0.0.1:55158
+[38;5;82m[62e319ca][0m[38;5;90m[XCUITestDriver@a8b4][0m connect ECONNREFUSED 127.0.0.1:55158
+[38;5;82m[62e319ca][0m[38;5;90m[XCUITestDriver@a8b4][0m connect ECONNREFUSED 127.0.0.1:55158
+[38;5;82m[62e319ca][0m[38;5;90m[XCUITestDriver@a8b4][0m connect ECONNREFUSED 127.0.0.1:55158
+[38;5;82m[62e319ca][0m[38;5;90m[XCUITestDriver@a8b4][0m connect ECONNREFUSED 127.0.0.1:55158
+[38;5;82m[62e319ca][0m[38;5;90m[XCUITestDriver@a8b4][0m connect ECONNREFUSED 127.0.0.1:55158
+[38;5;82m[62e319ca][0m[38;5;90m[XCUITestDriver@a8b4][0m connect ECONNREFUSED 127.0.0.1:55158
+[38;5;82m[62e319ca][0m[38;5;90m[XCUITestDriver@a8b4][0m connect ECONNREFUSED 127.0.0.1:55158
+[38;5;82m[62e319ca][0m[38;5;90m[XCUITestDriver@a8b4][0m connect ECONNREFUSED 127.0.0.1:55158
+[38;5;82m[62e319ca][0m[38;5;90m[XCUITestDriver@a8b4][0m connect ECONNREFUSED 127.0.0.1:55158
+[38;5;82m[62e319ca][0m[38;5;90m[XCUITestDriver@a8b4][0m Determined the downstream protocol as 'W3C'
+[38;5;82m[62e319ca][0m[38;5;90m[XCUITestDriver@a8b4][0m WDA session startup took 50ms
+[38;5;82m[62e319ca][0m[38;5;187m[AppiumDriver@3754][0m New XCUITestDriver session created successfully, session 62e319ca-5a52-4a6e-975c-0ae5ce97b87f added to master session list
+[38;5;82m[62e319ca][0m[38;5;86m[HTTP][0m [37m<-- POST /wd/hub/session [39m[32m200[39m [90m19862 ms - 680[39m [90m[39m
+[38;5;86m[HTTP][0m [37m-->[39m [37mGET[39m [37m/wd/hub/status[39m [90m{}[39m
+[38;5;86m[HTTP][0m [37m<-- GET /wd/hub/status [39m[32m200[39m [90m3 ms - 111[39m [90m[39m
+[38;5;82m[62e319ca][0m[38;5;86m[HTTP][0m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/62e319ca-5a52-4a6e-975c-0ae5ce97b87f/timeouts[39m [90m{"implicit":30000}[39m
+[38;5;82m[62e319ca][0m[38;5;86m[HTTP][0m [37m<-- POST /wd/hub/session/62e319ca-5a52-4a6e-975c-0ae5ce97b87f/timeouts [39m[32m200[39m [90m2 ms - 14[39m [90m[39m
+[38;5;82m[62e319ca][0m[38;5;86m[HTTP][0m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/62e319ca-5a52-4a6e-975c-0ae5ce97b87f/appium/settings[39m [90m{"settings":{"respectSystemAlerts":true}}[39m
+[38;5;82m[62e319ca][0m[38;5;86m[HTTP][0m [37m<-- POST /wd/hub/session/62e319ca-5a52-4a6e-975c-0ae5ce97b87f/appium/settings [39m[32m200[39m [90m21 ms - 14[39m [90m[39m
+[38;5;82m[62e319ca][0m[38;5;86m[HTTP][0m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/62e319ca-5a52-4a6e-975c-0ae5ce97b87f/execute/sync[39m [90m{"script":"mobile: deviceScreenInfo","args":[]}[39m
+[38;5;82m[62e319ca][0m[38;5;86m[HTTP][0m [37m<-- POST /wd/hub/session/62e319ca-5a52-4a6e-975c-0ae5ce97b87f/execute/sync [39m[32m200[39m [90m166 ms - 103[39m [90m[39m
+[38;5;82m[62e319ca][0m[38;5;86m[HTTP][0m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/62e319ca-5a52-4a6e-975c-0ae5ce97b87f/execute/sync[39m [90m{"script":"mobile: deviceScreenInfo","args":[]}[39m
+[38;5;82m[62e319ca][0m[38;5;86m[HTTP][0m [37m<-- POST /wd/hub/session/62e319ca-5a52-4a6e-975c-0ae5ce97b87f/execute/sync [39m[32m200[39m [90m1 ms - 103[39m [90m[39m
+[38;5;82m[62e319ca][0m[38;5;86m[HTTP][0m [37m-->[39m [37mDELETE[39m [37m/wd/hub/session/62e319ca-5a52-4a6e-975c-0ae5ce97b87f[39m [90m{}[39m
+[38;5;82m[62e319ca][0m[38;5;187m[AppiumDriver@3754][0m Removing session 62e319ca-5a52-4a6e-975c-0ae5ce97b87f from our master session list
+[38;5;82m[62e319ca][0m[38;5;23m[DevCon Factory][0m Releasing connections for 35709DD4-C37D-4E39-8444-81ABF01A04F3 device on any port number
+[38;5;82m[62e319ca][0m[38;5;23m[DevCon Factory][0m Found cached connections to release: ["35709DD4-C37D-4E39-8444-81ABF01A04F3:55158"]
+[38;5;82m[62e319ca][0m[38;5;86m[HTTP][0m [37m<-- DELETE /wd/hub/session/62e319ca-5a52-4a6e-975c-0ae5ce97b87f [39m[32m200[39m [90m18 ms - 14[39m [90m[39m
+[38;5;112m[Appium][0m Received SIGTERM - shutting down
+[38;5;86m[HTTP][0m Closing Appium HTTP server
+[38;5;86m[HTTP][0m Appium HTTP server has been succesfully closed after 1ms

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="TS3" time="7.007" tests="1" failures="0" errors="0">
+   <testsuite name="TS3" tests="1" failures="0" errors="0" time="7.007" skipped="0" timestamp="19-03-2025T10:44:50" hostname="phuc.truong - localhost" id="Test Suites/TS3">
+      <properties>
+         <property name="deviceName" value=""/>
+         <property name="devicePlatform"/>
+         <property name="logFolder" value="/Users/phuc.truong/Documents/Code/support-reproduce-issue/Reports/20250319_104444/TS3/20250319_104444"/>
+         <property name="logFiles" value="/Users/phuc.truong/Documents/Code/support-reproduce-issue/Reports/20250319_104444/TS3/20250319_104444/execution0.log"/>
+         <property name="attachments" value=""/>
+         <property name="hostName" value="phuc.truong - localhost"/>
+         <property name="os" value="Mac OS X 64bit"/>
+         <property name="katalonVersion" value="10.1.0.223"/>
+         <property name="browser" value="Chrome 134.0.6998.89"/>
+         <property name="hostAddress" value="127.0.0.1"/>
+         <property name="sessionId" value="5c5a1ff751b36dc730ab333784edef1f"/>
+         <property name="seleniumVersion" value="4.22.0"/>
+         <property name="proxyInformation" value="ProxyInformation { proxyOption=NO_PROXY, proxyServerType=HTTP, username=, password=********, proxyServerAddress=, proxyServerPort=0, executionList=&quot;&quot;, isApplyToDesiredCapabilities=true }"/>
+         <property name="platform" value="Mac OS X"/>
+      </properties>
+      <testcase name="Test Cases/TC 3" time="6.932" classname="Test Cases/TC 3" status="PASSED">
+         <system-out><![CDATA[19-03-2025T10:44:50 - [TEST_CASE][PASSED] - Test Cases/TC 3: Test Cases/TC 3
+
+19-03-2025T10:44:50 - [TEST_STEP][PASSED] - Start listener action : sampleBeforeTestCase: null
+
+19-03-2025T10:44:50 - [TEST_STEP][PASSED] - println(testCaseContext.getTestCaseId()): null
+
+19-03-2025T10:44:50 - [TEST_STEP][PASSED] - println(testCaseContext.getTestCaseVariables()): null
+
+19-03-2025T10:44:50 - [TEST_STEP][PASSED] - dc = new com.kms.katalon.core.driver.internal.DriverCleanerCollector(): null
+
+19-03-2025T10:44:50 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+19-03-2025T10:44:50 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+19-03-2025T10:44:50 - [MESSAGE][INFO] - User set preference: ['webSocketUrl', 'false']
+
+19-03-2025T10:44:50 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+19-03-2025T10:44:52 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+19-03-2025T10:44:52 - [TEST_STEP][PASSED] - navigateToUrl("katalon.com"): Navigate to 'http://katalon.com' successfully
+
+19-03-2025T10:44:57 - [MESSAGE][PASSED] - Navigate to 'http://katalon.com' successfully
+
+19-03-2025T10:44:57 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+19-03-2025T10:44:57 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <system-out><![CDATA[19-03-2025T10:44:50 - [TEST_SUITE][PASSED] - TS3: Test Cases/TC 3]]></system-out>
+      <system-err><![CDATA[]]></system-err>
+   </testsuite>
+</testsuites>

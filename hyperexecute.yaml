@@ -1,0 +1,24 @@
+autosplit: true
+concurrency: 1
+globalTimeout: 90
+jobLabel:
+    - Katalon
+maxRetries: 1
+mergeArtifacts: true
+partialReports:
+    frameworkName: extent-native
+    location: Extent
+    type: json
+report: true
+retryOnFailure: false
+runson: mac13
+runtime:
+    language: katalon
+    version: 9.7.3
+testDiscovery:
+    command: grep -lr 'testSuiteGuid' */*.ts | sed 's/:.*//' | sed 's/.ts//g'
+    mode: dynamic
+    type: raw
+
+preTestCommand: echo $JAVA_HOME    
+testRunnerCommand: katalonc -noSplash -runMode=console -projectPath="/Users/ltuser/foreman/support-reproduce-issue/support-reproduce-issue.prj" -retry=0 -testSuitePath="Test Suites/BhavyanshADOts" -browserType="lambdatestchrome" -executionProfile="default" -apiKey="d1e929ac-be0f-4cec-a5fc-f9fd6d7c8485" -orgID=1192683 --config -proxy.auth.option=USE_SYSTEM -proxy.system.option=USE_SYSTEM -proxy.system.applyToDesiredCapabilities=true -webui.autoUpdateDrivers=true

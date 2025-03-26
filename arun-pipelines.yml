@@ -1,0 +1,30 @@
+trigger:
+  - main
+
+pool:
+  vmImage: windows-latest
+
+steps:
+  - task: katalonTask@1
+    inputs:
+      version: '10.1.1'
+      executeArgs: >
+        katalonc -retry=0 -testSuitePath="Test Suites/TS3"
+        -browserType="TestCloud" -executionProfile="default"
+        -apiKey="db7502d2-0637-4b57-9a77-f7e98657f02f"
+        -testOpsProjectId=1927893 
+        -testcloudEnvironmentId="458" 
+        -testcloudTunnel="false"
+        -orgID=1959366 --config
+        -proxy.auth.option=NO_PROXY
+        -proxy.system.option=NO_PROXY
+        -proxy.system.applyToDesiredCapabilities=true
+        -webui.autoUpdateDrivers=true
+
+  - script: echo Hello, world!
+    displayName: 'Run a one-line script'
+
+  - script: |
+      echo Add other tasks to build, test, and deploy your project.
+      echo See https://aka.ms/yaml
+    displayName: 'Run a multi-line script'

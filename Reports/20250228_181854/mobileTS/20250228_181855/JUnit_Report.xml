@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="mobileTS" time="90.299" tests="1" failures="0" errors="0">
+   <testsuite name="mobileTS" tests="1" failures="0" errors="0" time="90.299" skipped="0" timestamp="28-02-2025T18:19:00" hostname="bhavyansh-katalon - localhost" id="Test Suites/mobileTS">
+      <properties>
+         <property name="deviceName" value="iPhone 16"/>
+         <property name="devicePlatform" value="iOS"/>
+         <property name="logFolder" value="/Users/bhavyansh-katalon/git/support-reproduce-issue/Reports/20250228_181854/mobileTS/20250228_181855"/>
+         <property name="logFiles" value="/Users/bhavyansh-katalon/git/support-reproduce-issue/Reports/20250228_181854/mobileTS/20250228_181855/execution0.log, /Users/bhavyansh-katalon/git/support-reproduce-issue/Reports/20250228_181854/mobileTS/20250228_181855/appium_error.log, /Users/bhavyansh-katalon/git/support-reproduce-issue/Reports/20250228_181854/mobileTS/20250228_181855/appium.log, /Users/bhavyansh-katalon/git/support-reproduce-issue/Reports/20250228_181854/mobileTS/20250228_181855/appium-proxy-server.log"/>
+         <property name="attachments" value=""/>
+         <property name="hostName" value="bhavyansh-katalon - localhost"/>
+         <property name="os" value="Mac OS X 64bit"/>
+         <property name="appiumServerStatus" value="{&quot;value&quot;:{&quot;ready&quot;:true,&quot;message&quot;:&quot;The server is ready to accept new connections&quot;,&quot;build&quot;:{&quot;version&quot;:&quot;2.11.3&quot;}}}"/>
+         <property name="katalonVersion" value="9.7.4.223"/>
+         <property name="deviceOS" value="iOS"/>
+         <property name="appiumVersion" value="2.11.3"/>
+         <property name="deviceModel" value="Not available for Simulator"/>
+         <property name="hostAddress" value="127.0.0.1"/>
+         <property name="deviceManufacturer" value="Apple"/>
+         <property name="deviceId" value="null"/>
+         <property name="deviceName" value="iPhone 16"/>
+         <property name="deviceOSVersion" value="18.2"/>
+      </properties>
+      <testcase name="Test Cases/mobileTC" time="90.236" classname="Test Cases/mobileTC" status="PASSED">
+         <system-out><![CDATA[28-02-2025T18:19:00 - [TEST_CASE][PASSED] - Test Cases/mobileTC: Test Cases/mobileTC
+
+28-02-2025T18:19:00 - [TEST_STEP][PASSED] - Start listener action : sampleBeforeTestCase: null
+
+28-02-2025T18:19:00 - [TEST_STEP][PASSED] - println(testCaseContext.getTestCaseId()): null
+
+28-02-2025T18:19:00 - [TEST_STEP][PASSED] - println(testCaseContext.getTestCaseVariables()): null
+
+28-02-2025T18:19:00 - [TEST_STEP][PASSED] - dc = new com.kms.katalon.core.driver.internal.DriverCleanerCollector(): null
+
+28-02-2025T18:19:00 - [TEST_STEP][PASSED] - Start listener action : sampleBeforeTestCase: null
+
+28-02-2025T18:19:00 - [TEST_STEP][PASSED] - startApplication("/Users/bhavyansh-katalon/Downloads/iOS.Simulator.SauceLabs.Mobile.Sample.app.2.7.1.app", true): Started application: '/Users/bhavyansh-katalon/Downloads/iOS.Simulator.SauceLabs.Mobile.Sample.app.2.7.1.app'
+
+28-02-2025T18:19:00 - [MESSAGE][INFO] - Starting application: '/Users/bhavyansh-katalon/Downloads/iOS.Simulator.SauceLabs.Mobile.Sample.app.2.7.1.app'
+
+28-02-2025T18:19:11 - [MESSAGE][WARNING] - Failed to start ios_webkit_debug_proxy on default port 27753
+
+28-02-2025T18:19:11 - [MESSAGE][INFO] - Detected NodeJS location: "/opt/homebrew/Cellar/node/22.10.0/bin/node"
+
+28-02-2025T18:19:11 - [MESSAGE][INFO] - PATH: /opt/homebrew/Cellar/node/22.10.0/bin:/Users/bhavyansh-katalon/flutter/bin:/Users/bhavyansh-katalon/Library/Android/sdk/platform-tools:/Users/bhavyansh-katalon/Library/Android/sdk/tools:/Users/bhavyansh-katalon/Library/Android/sdk/tools/bin:/Users/bhavyansh-katalon/.sdkman/candidates/gradle/current/bin:/Users/bhavyansh-katalon:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/Users/bhavyansh-katalon/hyperexecute:/usr/local/bin
+
+28-02-2025T18:19:11 - [MESSAGE][INFO] - APPIUM_HOME: /Users/bhavyansh-katalon/.appium
+
+28-02-2025T18:19:11 - [MESSAGE][INFO] - appium outlog: /Users/bhavyansh-katalon/git/support-reproduce-issue/Reports/20250228_181854/mobileTS/20250228_181855/appium.log
+
+28-02-2025T18:19:11 - [MESSAGE][INFO] - appium errlog: /Users/bhavyansh-katalon/git/support-reproduce-issue/Reports/20250228_181854/mobileTS/20250228_181855/appium_error.log
+
+28-02-2025T18:19:13 - [MESSAGE][INFO] - Appium server started on port 64,244
+
+28-02-2025T18:20:15 - [MESSAGE][PASSED] - Started application: '/Users/bhavyansh-katalon/Downloads/iOS.Simulator.SauceLabs.Mobile.Sample.app.2.7.1.app'
+
+28-02-2025T18:20:15 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/XCUIElementTypeTextField - test-Username"), "user01", 0): Text 'user01' has been set to element 'Object Repository/XCUIElementTypeTextField - test-Username'
+
+28-02-2025T18:20:15 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '30'
+
+28-02-2025T18:20:19 - [MESSAGE][PASSED] - Text 'user01' has been set to element 'Object Repository/XCUIElementTypeTextField - test-Username'
+
+28-02-2025T18:20:19 - [TEST_STEP][PASSED] - closeApplication(): Close app successfully
+
+28-02-2025T18:20:30 - [MESSAGE][PASSED] - Close app successfully]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <system-out><![CDATA[28-02-2025T18:19:00 - [TEST_SUITE][PASSED] - mobileTS: Test Cases/mobileTC]]></system-out>
+      <system-err><![CDATA[]]></system-err>
+   </testsuite>
+</testsuites>

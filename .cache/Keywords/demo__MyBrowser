@@ -1,0 +1,16 @@
+{
+  "keywordFileContentHash": "0018BCF1FB490B94E6978B93E59640CA",
+  "keywordClasses": [
+    {
+      "name": "demo.MyBrowser",
+      "keywordMethods": [
+        {
+          "name": "closeBrowser",
+          "parameters": [],
+          "javadoc": "/**\r\n\t * https://github.com/SeleniumHQ/selenium/issues/13837\r\n\t * https://issues.chromium.org/issues/336164423\r\n\t * \r\n\t * Besides, please add these arguments to the desired capabilities: \"--disable-renderer-backgrounding\", \"--disable-features\u003dSharedBitmapToSharedImage\"\r\n\t * (Add to under the \"args\" property)\r\n\t */"
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}
